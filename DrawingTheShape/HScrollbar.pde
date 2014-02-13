@@ -5,7 +5,7 @@ String[] labels = {
   "controlpoint1x", "controlpoint1y", "controlpoint2x", "anchorpoint1x", "anchorpoint1y"
 };
 
-int x = 5;
+int x = int(cp1x);
 int y = 20;
 int w = 50;
 int h = 8;
@@ -26,11 +26,11 @@ void setupScrollbars() {
 
 void drawScrollbars() {
   if (showvalues) {
-    cp1x = hs[0].getPos()*10.0f;     //sep.mult(25.0f);
-    cp1y = hs[1].getPos()*2.0f;     //sep.mult(25.0f);
-    cp2x = hs[2].getPos()*2.0f;     //sep.mult(25.0f);
-    ap1x = hs[3].getPos()*10.0f;
-    ap1y = hs[4].getPos()*0.5;
+    cp1x = hs[0].getPos()*100f;     //sep.mult(25.0f);
+    cp1y = hs[1].getPos()*100f;     //sep.mult(25.0f);
+    cp2x = hs[2].getPos()*100f;     //sep.mult(25.0f);
+    ap1x = hs[3].getPos()*100f;
+    ap1y = hs[4].getPos()*100f;
 
 
     if (showvalues) {
