@@ -1,6 +1,7 @@
 
 //HScrollbar hs1, hs2;  // Two scrollbars
 float cp1x, cp1y, cp2x, cp2y, ap1x, ap1y;
+float vertexX, vertexY;
 
 boolean showvalues = true;
 boolean scrollbar = false;
@@ -16,6 +17,9 @@ void setup() {
   cp2y = height/2;
   ap1x = width/2;
   ap1y = height/2;
+  
+  vertexX = 0;
+  vertexY = 0;
 }
 
 void draw() {
@@ -25,14 +29,20 @@ void draw() {
   strokeWeight(0);
   fill(255, 255, 255);
   beginShape();
-  vertex(30, 20);
   //bezierVertex(x2, y2, x3, y3, x4, y4)
   //x2  float: the x-coordinate of the 1st control point
   //x3  float: the x-coordinate of the 2nd control point
   //x4  float: the x-coordinate of the anchor point
+  vertex(mouseX, mouseY);
 
   bezierVertex(cp1x, cp1y, cp2x, cp2y, ap1x, ap1y);
-  bezierVertex(50, 80, 60, 25, 30, 20);
+  bezierVertex(cp1x + 8, cp1y + 10, cp2x + 8, cp2y + 10, ap1x + 8, ap1y + 10);
+  //  bezierVertex(50, 80, 60, 25, 30, 20);
   endShape();
+}
+
+void mouseReleased(){
+  vertexX = mouseX;
+  vertexY = mouseY;
 }
 
