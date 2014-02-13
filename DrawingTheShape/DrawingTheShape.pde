@@ -19,10 +19,11 @@ void setup() {
 }
 
 void draw() {
+  background(255);
   drawScrollbars();
   stroke(0);
   strokeWeight(0);
-
+  fill(255, 255, 255);
   beginShape();
   vertex(30, 20);
   //bezierVertex(x2, y2, x3, y3, x4, y4)

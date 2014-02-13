@@ -42,7 +42,7 @@ void drawScrollbars() {
         fill(0);
         textAlign(LEFT);
         text(labels[i], x+w+spacing, y+i*(h+spacing)+spacing);
-        text(hs[i].getPos(), x+w+spacing+75, y+i*(h+spacing)+spacing);
+        //text(hs[i].getPos(), x+w+spacing+75, y+i*(h+spacing)+spacing);
       }
     }
   }
