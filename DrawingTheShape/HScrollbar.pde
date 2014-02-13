@@ -1,16 +1,16 @@
 // Code based on "Scrollbar" by Casey Reas and adaptation by Daniel Shiffman
 
-HScrollbar[] hs = new HScrollbar[5];//
+HScrollbar[] hs = new HScrollbar[6];//
 String[] labels = {
-  "controlpoint1x", "controlpoint1y", "controlpoint2x", "anchorpoint1x", "anchorpoint1y"
+  "controlpoint1x", "controlpoint1y", "controlpoint2x", "controlpoint2y", "anchorpoint1x", "anchorpoint1y"
 };
 
-int x = int(cp1x);
+int x = 40;
 int y = 20;
-int w = 50;
+int w = 400;
 int h = 8;
 int l = 2;
-int spacing = 4;
+int spacing = 5;
 
 void setupScrollbars() {
   for (int i = 0; i < hs.length; i++) {
@@ -21,7 +21,8 @@ void setupScrollbars() {
   hs[1].setPos(0.5);
   hs[2].setPos(0.5);
   hs[3].setPos(0.5);
-  hs[4].setPos(0.05);
+  hs[4].setPos(0.5);
+  hs[5].setPos(0.5);
 }
 
 void drawScrollbars() {
@@ -29,8 +30,9 @@ void drawScrollbars() {
     cp1x = hs[0].getPos()*100f;     //sep.mult(25.0f);
     cp1y = hs[1].getPos()*100f;     //sep.mult(25.0f);
     cp2x = hs[2].getPos()*100f;     //sep.mult(25.0f);
-    ap1x = hs[3].getPos()*100f;
-    ap1y = hs[4].getPos()*100f;
+    cp2y = hs[3].getPos()*100f;    
+    ap1x = hs[4].getPos()*100f;
+    ap1y = hs[5].getPos()*100f;
 
 
     if (showvalues) {
@@ -40,7 +42,7 @@ void drawScrollbars() {
         fill(0);
         textAlign(LEFT);
         text(labels[i], x+w+spacing, y+i*(h+spacing)+spacing);
-        //text(hs[i].getPos(),x+w+spacing+75,y+i*(h+spacing)+spacing);
+        text(hs[i].getPos(), x+w+spacing+75, y+i*(h+spacing)+spacing);
       }
     }
   }
