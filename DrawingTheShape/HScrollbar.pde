@@ -1,8 +1,8 @@
 // Code based on "Scrollbar" by Casey Reas and adaptation by Daniel Shiffman
 
-HScrollbar[] hs = new HScrollbar[6];//
+HScrollbar[] hs = new HScrollbar[8];//
 String[] labels = {
-  "controlpoint1x", "controlpoint1y", "controlpoint2x", "controlpoint2y", "anchorpoint1x", "anchorpoint1y"
+  "controlpoint1x", "controlpoint1y", "controlpoint2x", "controlpoint2y", "anchorpoint1x", "anchorpoint1y", "vertexX", "vertexY"
 };
 
 int x = 40;
@@ -10,7 +10,7 @@ int y = 20;
 int w = 400;
 int h = 8;
 int l = 2;
-int spacing = 5;
+int spacing = 20;
 
 void setupScrollbars() {
   for (int i = 0; i < hs.length; i++) {
@@ -23,6 +23,8 @@ void setupScrollbars() {
   hs[3].setPos(0.5);
   hs[4].setPos(0.5);
   hs[5].setPos(0.5);
+  hs[6].setPos(0.5);
+  hs[7].setPos(0.5);
 }
 
 void drawScrollbars() {
@@ -33,6 +35,8 @@ void drawScrollbars() {
     cp2y = hs[3].getPos()*100f;    
     ap1x = hs[4].getPos()*100f;
     ap1y = hs[5].getPos()*100f;
+    vertexX = hs[6].getPos()*100f;
+    vertexY = hs[7].getPos()*100f;
 
 
     if (showvalues) {
