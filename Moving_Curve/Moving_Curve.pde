@@ -31,8 +31,8 @@ void draw() {
     float y = map(sin(angle), -1, 1, 0, height);
     fill(109, 24, 170);
     //ellipse(x, y, 48, 48);  //the original code
-    curve(5, 26, x, y, width, height, 15, 65); 
-    curve(5, 26, width, height, x, y, 15, 65); 
+    curve(5, 26, mouseX, mouseY, x, y, 15, 65); 
+    //curve(5, 26, width, height, x, y, 15, 65); 
     angle += angleVel;
   }
 }
