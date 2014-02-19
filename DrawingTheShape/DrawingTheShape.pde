@@ -6,6 +6,8 @@ float vertexX, vertexY;
 boolean showvalues = true;
 boolean scrollbar = false;
 
+//the max of everything is like 100
+
 void setup() {
   size(800, 800);
   smooth();
@@ -17,7 +19,6 @@ void setup() {
   cp2y = height/2;
   ap1x = width/2;
   ap1y = height/2;
-  
   vertexX = width/2;
   vertexY = height/2;
 }
@@ -39,9 +40,13 @@ void draw() {
   bezierVertex(cp1x + 8, cp1y + 10, cp2x + 8, cp2y + 10, ap1x + 8, ap1y + 10);
   //  bezierVertex(50, 80, 60, 25, 30, 20);
   endShape();
+  println("cp1x = " + cp1x);
+  println("cp2x = " + cp2x);
+  println("ap1x = " + ap1x);
+  println("vertexX = " + vertexX);
 }
 
-void mouseReleased(){
+void mouseReleased() {
   //vertexX = mouseX;
   //vertexY = mouseY;
 }
