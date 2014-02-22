@@ -6,6 +6,7 @@ float tailHeight =300;
 
 int startX, endX;
 int tailLength;
+int xspacing = 5;   
 
 int angle;
 
@@ -20,7 +21,6 @@ void setup() {
 }
 
 void draw() {
-
   background(255);
   tailLength = mouseX;
   startAngle += 0.5;  //controls speed of wave
@@ -38,9 +38,9 @@ void draw() {
 
     // thickness of tail (each pixel)
     float y = map(sin(radians((startAngle+a)%360)), -1, 1, 0, height/2);
-
+    // println("xspacing = " + xspacing + " x = " + x + " (x*xspacing) " + (x*xspacing) ); 
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
-
+  //  ellipse(x, y, 20, 20); 
     noStroke();
     fill(109, 24, 170);  //purple color
     rect(x, y, 1, h);
@@ -50,21 +50,21 @@ void draw() {
     if (angle>360)
       angle = 0;
   }
- // suckers();
+  // suckers();
 }
 
 void suckers() {
-  for (int x = 1; x <= width/2; x += 24) {  //NoC example NOC_3_09
+  for (int e = 1; e <= width/2; e += 24) {  //NoC example NOC_3_09
     float y = map(sin(angle), -1, 1, 0, height/2);
     strokeWeight(2);
     stroke(15);
     fill(255);
-    ellipse(x, y, 20, 20);  //the original code
-    ellipse(x + 10, y + 40, 20, 20);
-       angle++;
+    ellipse(e*xspacing, y, 20, 20);  
+    ellipse((e*xspacing) + 10, y + 40, 20, 20);
+    angle++;
 
-//    if (angle>360)
-//      angle = 0;
+    //    if (angle>360)
+    //      angle = 0;
   }
 }
 
