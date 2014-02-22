@@ -2,12 +2,12 @@
 float startAngle = 0;
 float angleVel = 0.1;
 
-  float tailHeight =300;
+float tailHeight =300;
 
-  int startX, endX;
-  int tailLength;
+int startX, endX;
+int tailLength;
 
-
+int angle;
 
 void setup() {
   size(800, 800);
@@ -15,39 +15,56 @@ void setup() {
 
   rectMode(CENTER);
   tailLength = width/2;
+
+  angle = 0;
 }
 
 void draw() {
 
   background(255);
-  noStroke();
-//  strokeWeight(1);
-
+  tailLength = mouseX;
   startAngle += 0.5;  //controls speed of wave
   float angle = startAngle; //this will make it stop moving with a static number
-  
+
   angle = 0;
-  startX = mouseX;
+  startX = 2;
+  //println(mouseX);
   endX = startX + tailLength;
-  
+
   for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
-  
+
     // a is the angle of sine wave to calculate thickness of the half of tail
     float a = map(x, startX+tailLength/2, startX+tailLength, 90, 0);
-    
+
     // thickness of tail (each pixel)
     float y = map(sin(radians((startAngle+a)%360)), -1, 1, 0, height/2);
 
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
 
-
-    fill(109, 24, 170);
-
+    noStroke();
+    fill(109, 24, 170);  //purple color
     rect(x, y, 1, h);
+
     angle++;
 
     if (angle>360)
       angle = 0;
+  }
+ // suckers();
+}
+
+void suckers() {
+  for (int x = 1; x <= width/2; x += 24) {  //NoC example NOC_3_09
+    float y = map(sin(angle), -1, 1, 0, height/2);
+    strokeWeight(2);
+    stroke(15);
+    fill(255);
+    ellipse(x, y, 20, 20);  //the original code
+    ellipse(x + 10, y + 40, 20, 20);
+       angle++;
+
+//    if (angle>360)
+//      angle = 0;
   }
 }
 

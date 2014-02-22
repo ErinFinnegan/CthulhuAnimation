@@ -28,7 +28,7 @@ void draw() {
   //y3  float: coordinates for the second point
   //x4  float: coordinates for the ending control point
   //y4  float: coordinates for the ending control point
-   curve(startAngle, mouseY, 0, 0, width/2, height/2, angle, mouseY); 
+ //  curve(startAngle, mouseY, 0, 0, width/2, height/2, angle, mouseY); 
 
   for (int x = 1; x <= width/2; x += 24) {  //NoC example NOC_3_09
     float y = map(sin(angle), -1, 1, 0, height/2);

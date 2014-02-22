@@ -25,6 +25,8 @@ void setup() {
   }
 
   yvalues = new float[w/xspacing];
+  
+  println(dx);
 }
 
 void draw() {
