@@ -34,9 +34,7 @@ void draw() {
   //println(mouseX);
   endX = startX + tailLength;
 
-textSize(24);
-   text(instructions, (width/2), (height-50));
-   
+
   for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
 
     // a is the angle of sine wave to calculate thickness of the half of tail
@@ -46,7 +44,7 @@ textSize(24);
     float y = map(sin(radians((startAngle+a)%360)), -1, 1, 0, height/2);
     // println("xspacing = " + xspacing + " x = " + x + " (x*xspacing) " + (x*xspacing) ); 
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
-  //  ellipse(x, y, 20, 20); 
+    //  ellipse(x, y, 20, 20); 
     noStroke();
     fill(109, 24, 170);  //purple color
     rect(x, y, 1, h);
@@ -56,6 +54,29 @@ textSize(24);
     if (angle>360)
       angle = 0;
   }
+
+  for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
+
+    // a is the angle of sine wave to calculate thickness of the half of tail
+    float a = map(x, startX+tailLength/2, startX+tailLength, 90, 0);
+
+    // thickness of tail (each pixel)
+    float y = map(sin(radians((startAngle+a)%360)), -1, 1, 0, height/2);
+    // println("xspacing = " + xspacing + " x = " + x + " (x*xspacing) " + (x*xspacing) ); 
+    float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
+    //  ellipse(x, y, 20, 20); 
+    noStroke();
+    fill(109, 24, 170);  //purple color
+    rect(x, y, 1, h);
+
+    angle++;
+
+    if (angle>360)
+      angle = 0;
+  }
+  textSize(24);
+  text(instructions, (width/2), (height-50));
+
   // suckers();
 }
 
@@ -66,11 +87,11 @@ void suckers() {
     stroke(15);
     fill(255);
     ellipse(e*xspacing, y, 20, 20);  
-    ellipse((e*xspacing) + 10, y + 40, 20, 20);
+    ellipse((e*xspacing) + 10, y + 40, 20, 20);  
     suckersangle++;
 
-        if (angle>360)
-          angle = 0;
+    if (angle>360)
+      angle = 0;
   }
 }
 
