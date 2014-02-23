@@ -4,6 +4,8 @@ float angleVel = 0.1;
 
 float tailHeight =300;
 
+String instructions = "Move the mouse.";
+
 int startX, endX;
 int tailLength;
 int xspacing = 5;   
@@ -31,6 +33,9 @@ void draw() {
   //println(mouseX);
   endX = startX + tailLength;
 
+textSize(24);
+   text(instructions, (width/2), (height-50));
+   
   for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
 
     // a is the angle of sine wave to calculate thickness of the half of tail

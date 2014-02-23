@@ -5,7 +5,7 @@
 // Additive Wave
 // Create a more complex wave by adding two waves together. 
  
-int xspacing = 1;   // How far apart should each horizontal location be spaced
+int xspacing = 10;   // How far apart should each horizontal location be spaced
 int w;              // Width of entire wave
 int maxwaves = 5;   // total # of waves to add together
 
