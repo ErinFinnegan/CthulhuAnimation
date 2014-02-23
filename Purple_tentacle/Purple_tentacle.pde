@@ -11,6 +11,7 @@ int tailLength;
 int xspacing = 5;   
 
 int angle;
+int suckersangle;
 
 void setup() {
   size(800, 800);
@@ -18,7 +19,7 @@ void setup() {
 
   rectMode(CENTER);
   tailLength = width/2;
-
+  suckersangle = 1;
   angle = 0;
 }
 
@@ -59,17 +60,17 @@ textSize(24);
 }
 
 void suckers() {
-  for (int e = 1; e <= width/2; e += 24) {  //NoC example NOC_3_09
-    float y = map(sin(angle), -1, 1, 0, height/2);
+  for (int e = 1; e <= width/2; e += 8) {  //NoC example NOC_3_09
+    float y = map(sin(suckersangle), -1, 1, 0, height/2);
     strokeWeight(2);
     stroke(15);
     fill(255);
     ellipse(e*xspacing, y, 20, 20);  
     ellipse((e*xspacing) + 10, y + 40, 20, 20);
-    angle++;
+    suckersangle++;
 
-    //    if (angle>360)
-    //      angle = 0;
+        if (angle>360)
+          angle = 0;
   }
 }
 
