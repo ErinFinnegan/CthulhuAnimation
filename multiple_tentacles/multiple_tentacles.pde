@@ -9,7 +9,7 @@ int tailLength;
 int xspacing = 5;   
 
 int angle;
-tentacle tentacle1 = new tentacle(0.5, );
+tentacle tentacle1 = new tentacle(0.5, 1, width/2, height/2);
 
 void setup() {
   size(800, 800);
@@ -25,19 +25,19 @@ void setup() {
 void draw() {
   background(255);
   tailLength = mouseX;
-  tentacle1.update;
+  tentacle1.update();
 }
 
 class tentacle {
   
-  tentacle (float tempstartAngle, int tempangle, int tempstartX, int tempendX;) {
+  tentacle (float tempstartAngle, int tempangle, int tempstartX, int tempendX) {
 
 // float tempstartAngle;
 //  int tempangle, tempstartX, tempendX;    
    tempstartAngle += startAngle;
 //  startAngle += 0.5;  //controls speed of wave
 //  float angle = startAngle; //this will make it stop moving with a static number
-    tempangle = = startAngle;
+    tempangle = int(startAngle);
 //  angle = 0;
 //  startX = 2;
 //  endX = startX + tailLength;
