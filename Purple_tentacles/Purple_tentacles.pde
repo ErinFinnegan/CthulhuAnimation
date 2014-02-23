@@ -43,7 +43,8 @@ void draw() {
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
     //  ellipse(x, y, 20, 20); 
     noStroke();
-    fill(0);  //making a black tentacle exactly behind the other tentacle
+    fill(109, 24, 170);  //purple color
+    //fill(0);  //making a black tentacle exactly behind the other tentacle
     rect(x, y + 10, 4, h);  //kind of adds a drop shadow effect
     //rect(x, y - 10, 4, h);
 
@@ -53,7 +54,7 @@ void draw() {
       angle = 0;
   }
 
-  for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
+  for (int x = startX; x <= endX; x ++) {  
 
     // a is the angle of sine wave to calculate thickness of the half of tail
     float a = map(x, startX+tailLength/2, startX+tailLength, 90, 0);
@@ -65,10 +66,11 @@ void draw() {
     //  ellipse(x, y, 20, 20); 
     noStroke();
     //fill(255, 10, 10);  //red
-    fill(109, 24, 170);  //purple color
-    rect(x, y, 1, h);
+    fill(186, 146, 201);  //purple color
+    rect(y, x, 10, h);
     //fill(14, 234, 12);  //green
-
+    fill(135, 13, 180);  //purple color
+    rect(y, y, 10, h);
     angle++;
 
     if (angle>360)
