@@ -46,8 +46,9 @@ void draw() {
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
     //  ellipse(x, y, 20, 20); 
     noStroke();
-    fill(109, 24, 170);  //purple color
-    rect(x, y, 1, h);
+    fill(0);  //making a black tentacle exactly behind the other tentacle
+    rect(x, y + 10, 4, h);  //kind of adds a drop shadow effect
+    //rect(x, y - 10, 4, h);
 
     angle++;
 
@@ -66,10 +67,10 @@ void draw() {
     float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
     //  ellipse(x, y, 20, 20); 
     noStroke();
-    fill(255, 10, 10);
-    rect(x+100, y-50, 1, h);
-    fill(14, 234, 12);  //purple color
-    rect(x+300, y+50, 1, h);
+    //fill(255, 10, 10);  //red
+    fill(109, 24, 170);  //purple color
+    rect(x, y, 1, h);
+    //fill(14, 234, 12);  //green
 
     angle++;
 
