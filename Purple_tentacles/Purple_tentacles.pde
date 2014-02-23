@@ -28,12 +28,9 @@ void draw() {
   tailLength = mouseX;
   startAngle += 0.5;  //controls speed of wave, smaller numbers make it slower
   float angle = startAngle; //this will make it stop moving with a static number
-
   angle = 1;  //as far as I can tell this part does nothing
   startX = 0;  //controls where the origin of the wave is on x
-  //println(mouseX);
   endX = startX + tailLength;
-
 
   for (int x = startX; x <= endX; x ++) {  //NoC example NOC_3_09
 
