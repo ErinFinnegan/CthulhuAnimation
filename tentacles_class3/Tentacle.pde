@@ -2,17 +2,17 @@
 class Tentacle {
 
   float startAngle;
-
   float tailHeight;
-
   int startX, endX;
   int tailLength;
+  color rgb;
 
-  Tentacle (int tempstartX, float tempStartAngle, int temptaillength, int temptailHeight) {
+  Tentacle (int tempstartX, float tempStartAngle, int temptaillength, int temptailHeight, color tempcolor) {
     startX = tempstartX;
     startAngle = tempStartAngle;
     tailHeight = temptailHeight;
     tailLength = temptaillength;
+    rgb = tempcolor;
   }
 
   void update() {
@@ -35,9 +35,9 @@ class Tentacle {
       float y = map(sin(radians((startAngle+a)%360)), -1, 1, 0, height/2);
 
       float h = tailHeight * ((x > startX+tailLength/2) ? sin(radians(a)) : 1);
-
-
-      fill(109, 24, 170);
+     // println("update RGB " + rgb);
+      fill(rgb);
+//      fill(109, 24, 170);
       rectMode(CENTER);
       rect(x, y, 1, h);
       angle++;
